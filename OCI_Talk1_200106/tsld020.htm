@@ -1,0 +1,61 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Season with a little DBI…</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Season with a little DBI…</H1> 
+ <P><UL>
+<LI><H2>Load the modules, then do all the previous work the easy way:
+</H2>
+</UL><UL>
+<H2>use DBI;
+</H2>
+</UL><UL>
+<H2>$dbh = DBI-&#062connect(”dbi:Oracle:”, $user, $password);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Get an OCI attribute from an DBI handle:
+</H2>
+</UL><UL>
+<H2>use Oracle::OCI qw(:all);
+</H2>
+</UL><UL>
+<H2>OCIAttrGet($dbh, OCI_HTYPE_handle, my $attrib_value, 0, OCI_ATTR_name, $dbh);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>That’s it!
+</H2>
+<UL>
+<LI>The $dbh DBI handle holds the DBD::Oracle handle that, in turn, holds the OCI handles
+<LI>The Oracle::OCI module works with DBD::Oracle to extract whichever handle is needed
+</UL></UL><UL>
+<LI><H2>
+</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld019.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld021.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld020.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

@@ -1,0 +1,82 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Oracle::PLSQL?</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Oracle::PLSQL?</H1> 
+ <P><UL>
+<LI>Auto-generate Perl proxy interfaces for PL/SQL packages and functions
+<LI>Invoke a PL/SQL function simply by calling a perl sub of the same name!
+<LI>IN, OUT, and IN OUT params of all types work as expected, inc polymorphism
+<LI>PL/SQL exceptions map to Perl exceptions
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>use DBI;
+</H2>
+</UL><UL>
+<H2>$dbh = DBI-&#062connect(’dbi:Oracle:’, $user, $pass, { ora_autolob =&#062 0 });
+</H2>
+</UL><UL>
+<H2>$bfile = $dbh-&#062selectcol_array(”select bfile from mylobs where id=? for update”, undef, 1);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>use Oracle::PLSQL;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>$dbms_lob = new Oracle::PLSQL DBMS_LOB =&#062 \$dbh;		# Magic
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>$dbms_lob-&#062fileexists($bfile) or die “File missing”;	# More magic via AUTOLOAD
+</H2>
+</UL><UL>
+<H2>$length = $dbms_lob-&#062filelength($bfile);
+</H2>
+</UL><UL>
+<H2>$dbms_lob-&#062filegetname($bfile, $diename, $filename);
+</H2>
+</UL><UL>
+<H2>$dbms_lob-&#062fileopen($bfile, $dbms_lob-&#062{file_readonly});
+</H2>
+</UL><UL>
+<H2>$dbms_lob-&#062read($bfile, 40, 1, $buffer);
+</H2>
+</UL><UL>
+<H2>$dbms_lob-&#062fileclose($bfile);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+<UL>
+<LI>Would work for any PL/SQL package - including your own</UL></UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld032.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld034.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld033.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

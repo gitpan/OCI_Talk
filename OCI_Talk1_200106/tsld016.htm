@@ -1,0 +1,72 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Pure Oracle::OCI - attach to server</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Pure Oracle::OCI - attach to server</H1> 
+ <P><UL>
+<LI><H2>Load the module and initialise the OCI and its Environment handle:
+</H2>
+</UL><UL>
+<H2>use Oracle::OCI qw(:all);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>OCIInitialize(OCI_OBJECT | OCI_THREADED | OCI_EVENTS | OCI_SHARED, 0, 0, 0, 0);
+</H2>
+</UL><UL>
+<H2>my $envhp = new_ptr('OCIEnvPtr'); #
+</H2>
+</UL><UL>
+<H2>OCIEnvInit($envhp, OCI_DEFAULT, 0, 0);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Allocate Error and Server handles:
+</H2>
+</UL><UL>
+<H2>OCIHandleAlloc($$envhp, my $errhp=0, OCI_HTYPE_ERROR, 0, 0);
+</H2>
+</UL><UL>
+<H2>$errhp = new_ptr('OCIErrorPtr', $errhp); #
+</H2>
+</UL><UL>
+<H2>OCIHandleAlloc($$envhp, my $svrhp=0, OCI_HTYPE_SERVER, 0, 0);
+</H2>
+</UL><UL>
+<H2>$svrhp = new_ptr('OCIServerPtr', $svrhp); #
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Attach to the server:
+</H2>
+</UL><UL>
+<H2>OCIServerAttach($svrhp, $errhp, 0, 0, OCI_DEFAULT);</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld015.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld017.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld016.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

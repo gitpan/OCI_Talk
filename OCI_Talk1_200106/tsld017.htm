@@ -1,0 +1,75 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Pure Oracle::OCI - login to server</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Pure Oracle::OCI - login to server</H1> 
+ <P><UL>
+<LI><H2>Allocate Service Context handle and associate it with the server handle:
+</H2>
+</UL><UL>
+<H2>OCIHandleAlloc($$envhp, my $svchp=0, OCI_HTYPE_SVCCTX, 0, 0);
+</H2>
+</UL><UL>
+<H2>$svchp = new_ptr('OCISvcCtxPtr', $svchp); #
+</H2>
+</UL><UL>
+<H2>OCIAttrSet($$svchp, OCI_HTYPE_SVCCTX, $$svrhp, 0, OCI_ATTR_SERVER, $errhp);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Allocate Session handle, add username/password and login to the server:
+</H2>
+</UL><UL>
+<H2>OCIHandleAlloc($$envhp, my $authp=0, OCI_HTYPE_SESSION, 0, 0);
+</H2>
+</UL><UL>
+<H2>$authp = new_ptr('OCISessionPtr', $authp); #
+</H2>
+</UL><UL>
+<H2>my ($user, $pass) = split /\//, $dbuser;
+</H2>
+</UL><UL>
+<H2>OCIAttrSet($$authp, OCI_HTYPE_SESSION, dvoid_p_str($user), OCI_ATTR_USERNAME, $errhp);
+</H2>
+</UL><UL>
+<H2>OCIAttrSet($$authp, OCI_HTYPE_SESSION, dvoid_p_str($pass), OCI_ATTR_PASSWORD, $errhp);
+</H2>
+</UL><UL>
+<H2>OCISessionBegin($svchp, $errhp, $authp, OCI_CRED_RDBMS, OCI_DEFAULT);
+</H2>
+</UL><UL>
+<H2>OCIAttrSet($$svchp, OCI_HTYPE_SVCCTX, $$authp, 0, OCI_ATTR_SESSION, $errhp);
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Get an OCI attribute from an OCI handle:
+</H2>
+</UL><UL>
+<H2>OCIAttrGet($$handle, OCI_HTYPE_handle, my $attrib_value, 0, OCI_ATTR_name, $errhp);</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld016.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld018.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld017.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

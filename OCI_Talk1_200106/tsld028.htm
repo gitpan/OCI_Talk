@@ -1,0 +1,92 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Generating the code</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Generating the code</H1> 
+ <P><UL>
+<LI><H2>Corresponding generated C code
+</H2>
+<UL>
+
+<BR></UL></UL><UL>
+<H2>  XS(XS_Oracle__OCI_OCICollSize)
+</H2>
+</UL><UL>
+<H2>  {
+</H2>
+</UL><UL>
+<H2>    dXSARGS;
+</H2>
+</UL><UL>
+<H2>    if (items != 4)
+</H2>
+</UL><UL>
+<H2>	    Perl_croak(aTHX_ "Usage: Oracle::OCI::OCICollSize(env, err, coll, size)");
+</H2>
+</UL><UL>
+<H2>    {
+</H2>
+</UL><UL>
+<H2>	OCIEnv *   env = ora_getptr_OCIEnvPtr(ST(0), "env", "OCIEnvPtr", "OCICollSize");
+</H2>
+</UL><UL>
+<H2>	OCIError * err = ora_getptr_OCIErrorPtr(ST(1), "err", "OCIErrorPtr", "OCICollSize");
+</H2>
+</UL><UL>
+<H2>	OCIColl *  coll = ora_getptr_OCICollPtr(ST(2), "coll", "OCICollPtr", "OCICollSize");
+</H2>
+</UL><UL>
+<H2>	sb4	size = (sb4)SvIV(ST(3));
+</H2>
+</UL><UL>
+<H2>	sword	RETVAL;
+</H2>
+</UL><UL>
+<H2>	dXSTARG;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>	RETVAL = OCICollSize(env, err, coll, &size);
+</H2>
+</UL><UL>
+<H2>	sv_setiv(ST(3), (IV)size);
+</H2>
+</UL><UL>
+<H2>	SvSETMAGIC(ST(3));
+</H2>
+</UL><UL>
+<H2>	XSprePUSH; PUSHi((IV)RETVAL);
+</H2>
+</UL><UL>
+<H2>    }
+</H2>
+</UL><UL>
+<H2>    XSRETURN(1);
+</H2>
+</UL><UL>
+<H2>  }</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld027.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld029.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld028.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

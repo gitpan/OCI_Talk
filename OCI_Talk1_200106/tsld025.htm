@@ -1,0 +1,48 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Mapping the OCI API to Perl #2</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Mapping the OCI API to Perl #2</H1> 
+ <P><UL>
+<LI><H2>Minor inconveniences
+</H2>
+<UL>
+<LI>OCI functions that take string + string length pairs
+<UL>
+<LI>would need	OCIFoo(…, $string, length($string), …);
+<LI>maybe do	OCIFoo(…, ocistrlen($string), …);
+<UL>
+which would return both values for you as a convenience
+<BR><BR>
+</UL></UL></UL></UL><UL>
+<LI><H2>More tricky issues
+</H2>
+<UL>
+<LI>OCI functions that want to write to a pre-allocated buffer and update a separate parameter with the output length
+<UL>
+<LI>I think I have a neat solution to this
+</UL><LI>OCI functions with void* output parameters such as OCIAttrGet()
+<UL>
+<LI>need to know what class to bless them into - use a lookup table</UL></UL></UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld024.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld026.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld025.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>
